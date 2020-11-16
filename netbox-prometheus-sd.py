@@ -22,8 +22,8 @@ def main(config):
         targets = []
 
         # Fetch devices and virtual machines from Netbox
-        devices = netbox.dcim.devices.filter(has_primary_ip=True, tag=group['netbox_tag'])
-        vms = netbox.virtualization.virtual_machines.filter(has_primary_ip=True, tag=group['netbox_tag'])
+        devices = netbox.dcim.devices.filter(has_primary_ip=True, tag=group['netbox_tag'], status="active")
+        vms = netbox.virtualization.virtual_machines.filter(has_primary_ip=True, tag=group['netbox_tag'], status="active")
 
         # Iterate through devices
         for device in itertools.chain(devices, vms):
