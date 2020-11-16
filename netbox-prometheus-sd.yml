@@ -1,0 +1,8 @@
+netbox_url: https://netbox.dev.level66.network/
+netbox_token: 
+scan_interval: 300
+
+groups:
+  - netbox_tag: prometheus_exporter_node
+    prometheus_file: /etc/prometheus/targets/prometheus_exporter_node.json
+    prometheus_port: 9100
